@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bulma": "^0.6.0",
     "immutable": "^3.8.2",
     "lodash-es": "^4.17.4",
     "prop-types": "^15.6.0",
