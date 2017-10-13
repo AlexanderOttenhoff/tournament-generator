@@ -1,0 +1,25 @@
+extends:
+  - airbnb
+  - prettier
+  - prettier/react
+
+plugins:
+  - react
+  - prettier
+  - jsx-a11y
+  - import
+
+env:
+  browser: true
+  es6: true
+
+rules:
+  react/jsx-filename-extension:
+    - error
+    - extensions:
+      - .js
+  no-plusplus: off
+  prettier/prettier:
+    - error
+    - singleQuote: true
+      trailingComma: es5
