@@ -3,6 +3,7 @@ import Immutable from 'immutable';
 
 import PlayersEntry from './players-entry';
 import Round from './round';
+import Ranking from './ranking';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class App extends React.Component {
       players: new Immutable.List(),
       playing: false,
       playersPerGame: 4,
-      round: 0,
+      round: 1,
+      ranking: new Immutable.List(),
     };
   }
 
@@ -23,16 +25,17 @@ class App extends React.Component {
             number={this.state.round}
             players={this.state.players.take(this.state.playersPerGame)}
             onClick={index =>
-              this.setState(({ players, playersPerGame, round }) => ({
+              this.setState(({ players, playersPerGame, round, ranking }) => ({
                 players: players
                   .skip(playersPerGame)
                   .concat(players.take(playersPerGame).remove(index)),
                 round: round + 1,
+                ranking: ranking.unshift(players.get(index)),
               }))}
           />
         );
       }
-      return <div>A winner is {this.state.players.get(0)}</div>;
+      return <Ranking players={this.state.ranking.toArray()} />;
     }
     return (
       <PlayersEntry
