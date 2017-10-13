@@ -1,5 +1,6 @@
 import React from 'react';
 import Immutable from 'immutable';
+import { shuffle } from 'lodash-es';
 
 class App extends React.Component {
   constructor(props) {
@@ -85,7 +86,9 @@ class App extends React.Component {
             <button
               onClick={() =>
                 this.setState(({ playersInput }) => ({
-                  players: new Immutable.List(playersInput.split('\n')),
+                  players: new Immutable.List(
+                    shuffle(playersInput.split('\n'))
+                  ),
                   playing: true,
                 }))}
             >
