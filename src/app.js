@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newPlayer: '',
+      playersInput: '',
       players: new Immutable.List(),
       playing: false,
       playersPerGame: 4,
@@ -59,23 +59,16 @@ class App extends React.Component {
               ))}
             </ul>
             <div>
-              <label htmlFor="newPlayer">
-                New Player
-                <input
-                  id="newPlayer"
-                  value={this.state.newPlayer}
-                  onChange={e => this.setState({ newPlayer: e.target.value })}
+              <label htmlFor="playersInput">
+                Enter player names
+                <textarea
+                  id="playersInput"
+                  rows={10}
+                  value={this.state.playersInput}
+                  onChange={e =>
+                    this.setState({ playersInput: e.target.value })}
                 />
               </label>
-              <button
-                onClick={() =>
-                  this.setState(({ players, newPlayer }) => ({
-                    newPlayer: '',
-                    players: players.push(newPlayer),
-                  }))}
-              >
-                +
-              </button>
             </div>
             <div>
               <label htmlFor="playersPerGame">
@@ -89,7 +82,15 @@ class App extends React.Component {
                 />
               </label>
             </div>
-            <button onClick={() => this.setState({ playing: true })}>Go</button>
+            <button
+              onClick={() =>
+                this.setState(({ playersInput }) => ({
+                  players: new Immutable.List(playersInput.split('\n')),
+                  playing: true,
+                }))}
+            >
+              Go
+            </button>
           </div>
         )}
       </div>
