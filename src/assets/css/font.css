@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'PixelEmulator';
+  src: url('../fonts/PixelEmulator.eot');
+  src: url('../fonts/PixelEmulator.woff2') format('woff2'),
+       url('../fonts/PixelEmulator.woff') format('woff'),
+       url('../fonts/PixelEmulator.ttf') format('truetype'),
+       url('../fonts/PixelEmulator.svg#PixelEmulator') format('svg'),
+       url('../fonts/PixelEmulator.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,151 @@
+@import "./font.css";
+
+/*
+  COLORS:
+
+  deep-blue: #01002A
+  dark-red:  #9B0918
+  red:       #DF191C
+  green:     #24F52E
+  blue:      #4079DB
+  orange:    #E6992C
+  pink:      #F1C6EA
+  purlple:   #67629A
+  dark-purlple:  #555288
+
+*/
+
+html, body {
+  font-family: 'PixelEmulator', sans-serif;
+  background-color: #000;
+}
+
+.players-entry {
+  background-color: #01002A;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+.players-entry::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background-color: #67629A;
+  z-index: 0;
+}
+
+.players-entry h1 {
+  text-transform: uppercase;
+  color: #DF191C;
+  font-size: 60px;
+  letter-spacing: 2px;
+  transform: scale(0.7, 1);
+  padding: 30px 0;
+  animation: colors 5s infinite;
+  text-shadow:
+    -3px -3px 0px white,
+    -3px 3px 0px white,
+    3px -3px 0px white,
+    3px 3px 0px white;
+}
+
+.players-entry .title-section {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 30px;
+  color: #F1C6EA;
+  text-shadow:
+    -3px -3px 0px #9B0918,
+    -3px 3px 0px #9B0918,
+    3px -3px 0px #9B0918,
+    3px 3px 0px #9B0918;
+}
+
+.players-entry label {
+  font-size: 25px;
+  text-align: center;
+  color: #4079DB;
+  text-shadow:
+    -2px -2px 0px #fff,
+    -2px 2px 0px #fff,
+    2px -2px 0px #fff,
+    2px 2px 0px #fff;
+}
+
+.players-entry section {
+  position: relative;
+  z-index: 10;
+}
+
+.players-entry #inputPlayers {
+  display: block;
+  margin: 20px auto 0;
+  width: 400px;
+  background-color: transparent;
+  border: none;
+  resize: none;
+  font-size: 20px;
+  color: #fff;
+  font-family: 'PixelEmulator', sans-serif;
+  outline: none;
+}
+.players-entry #playersPerGame {
+  display: block;
+  margin: 20px auto 0;
+  width: 400px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  font-family: 'PixelEmulator', sans-serif;
+  outline: none;
+  text-align: center;
+}
+
+.players-entry .title-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 5px);
+  width: 100%;
+  height: 3px;
+  background-color: #F1C6EA;
+  border-top: 3px solid #9B0918;
+  border-bottom: 3px solid #9B0918;
+  box-sizing: content-box;
+}
+.players-entry .title-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(100% + 5px);
+  width: 100%;
+  height: 3px;
+  background-color: #F1C6EA;
+  border-top: 3px solid #9B0918;
+  border-bottom: 3px solid #9B0918;
+  box-sizing: content-box;
+}
+
+@keyframes colors {
+  0%, 100% {
+    color: #DF191C;
+  }
+  20% {
+    color: #24F52E;
+  }
+  40% {
+    color: #4079DB;
+  }
+  60% {
+    color: #E6992C;
+  }
+  80% {
+    color: #67629A;
+  }
+}
