@@ -16,6 +16,12 @@ class PlayersEntry extends React.Component {
   render() {
     return (
       <div className="players-entry">
+        <div className="background">
+          <div className="sky" />
+          <div className="moutain" />
+          <div className="floor" />
+          <div className="mario" />
+        </div>
         <header>
           <h1>Players entry</h1>
         </header>
